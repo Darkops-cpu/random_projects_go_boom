@@ -1,5 +1,5 @@
 const input = document.getElementById("input");
-const button = document.getElementsByName("generate");
+const button = document.getElementsById("generate");
 const lowercase = document.getElementById("lowercase");
 const uppercase = document.getElementById("uppercase");
 const numbers = document.getElementById("numbers");
@@ -19,8 +19,7 @@ const hasUpper = uppercase.checked;
 const hasNumbers = numbers.checked;
 const hasSymbols = symbols.checked;
 
-const output = document.getElementById("display");
-
+const display = document.getElementById("display");
 
 button.onclick = function() {
     altpassword = '';
@@ -40,5 +39,5 @@ button.onclick = function() {
         }
     }
 
-    output.textContent = 'your password is ' + password;
+    display.textContent = `your password is ${password}`;
 };
