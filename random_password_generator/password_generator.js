@@ -13,160 +13,32 @@ const Symbols = '!@#$%^&*()_+';
 let altpassword = '';
 let password = '';
 
-const lenght = input.lenght;
+const length = input.value.length;
 const hasLower = lowercase.checked;
 const hasUpper = uppercase.checked;
 const hasNumbers = numbers.checked;
 const hasSymbols = symbols.checked;
 
-
-button.onclick = function() {
-    if(hasLower == true && hasUpper == true && hasNumbers == true && hasSymbols == true) {
-        for(let i = 0; i < lenght; i++) {
-            altpassword += Lowercase;
-            altpassword += Uppercase;
-            altpassword += Numbers;
-            altpassword += Symbols;
-
-            const random = Math.floor(Math.random() * altpassword.lenght + 1);
-
-            password += altpassword[random];
-
-        }
-    }
-
-    if(hasLower == true && hasUpper == true && hasNumbers == true && hasSymbols == false) {
-        for(let i = 0; i < lenght; i++) {
-            altpassword += Lowercase;
-            altpassword += Uppercase;
-            altpassword += Numbers;
-            
-
-            const random = Math.floor(Math.random() * altpassword.lenght + 1);
-
-            password += altpassword[random];
-
-        }
-    }
-
-    if(hasLower == true && hasUpper == true && hasNumbers == false && hasSymbols == true) {
-        for(let i = 0; i < lenght; i++) {
-            altpassword += Lowercase;
-            altpassword += Uppercase;
-            altpassword += Numbers;
-            
-
-            const random = Math.floor(Math.random() * altpassword.lenght + 1);
-
-            password += altpassword[random];
-
-        }
-    }
-
-    if(hasLower == true && hasUpper == false && hasNumbers == true && hasSymbols == true) {
-        for(let i = 0; i < lenght; i++) {
-            altpassword += Lowercase;
-            altpassword += Uppercase;
-            altpassword += Numbers;
-            
-
-            const random = Math.floor(Math.random() * altpassword.lenght + 1);
-
-            password += altpassword[random];
-
-        }
-    }
-
-    if(hasLower == false && hasUpper == true && hasNumbers == true && hasSymbols == true) {
-        for(let i = 0; i < lenght; i++) {
-            altpassword += Lowercase;
-            altpassword += Uppercase;
-            altpassword += Numbers;
-            
-
-            const random = Math.floor(Math.random() * altpassword.lenght + 1);
-
-            password += altpassword[random];
-
-        }
-    }
-
-
-    if(hasLower == true && hasUpper == true && hasNumbers == false && hasSymbols == false) {
-        for(let i = 0; i < lenght; i++) {
-            altpassword += Lowercase;
-            altpassword += Uppercase;
-
-            
-
-            const random = Math.floor(Math.random() * altpassword.lenght + 1);
-
-            password += altpassword[random];
-
-        }
-    }
-
-    if(hasLower == true && hasUpper == false && hasNumbers == false && hasSymbols == false) {
-        for(let i = 0; i < lenght; i++) {
-            altpassword += Lowercase;
-            
-
-            
-
-            const random = Math.floor(Math.random() * altpassword.lenght + 1);
-
-            password += altpassword[random];
-
-        }
-    }
-
-            altpassword += Uppercase;
-        for(let i = 0; i < lenght; i++) {
-            altpassword += Uowercase;
-            
-
-            
-
-            const random = Math.floor(Math.random() * altpassword.lenght + 1);
-
-            password += altpassword[random];
-
-        }
-    
-
-    if(hasLower == false && hasUpper == false && hasNumbers == true && hasSymbols == false) {
-        for(let i = 0; i < lenght; i++) {
-            altpassword += Numbers;
-            
-
-            
-
-            const random = Math.floor(Math.random() * altpassword.lenght + 1);
-
-            password += altpassword[random];
-
-        }
-    }
-
-    if(hasLower == false && hasUpper == false && hasNumbers == false && hasSymbols == true) {
-        for(let i = 0; i < lenght; i++) {
-            altpassword += Symbols;
-            const random = Math.floor(Math.random() * altpassword.lenght + 1);
-
-            password += altpassword[random];
-
-        }
-    }
-
-    if(hasLower == false && hasUpper == false && hasNumbers == false && hasSymbols == false) {
-        password = "select a checkbox";
-    }
-
-    return password;
-
-
-}
-
 const output = document.getElementById("display");
 
-output.textContent = "your password is ${password";
+
+button.onclick = function() {
+    altpassword = '';
+    password = '';
+
+    if (hasLower) altpassword += Lowercase;
+    if (hasUpper) altpassword += Uppercase;
+    if (hasNumbers) altpassword += Numbers;
+    if (hasSymbols) altpassword += Symbols;
+
+    if (altpassword.length === 0) {
+        password = "select a checkbox";
+    } else {
+        for (let i = 0; i < length; i++) {
+            const random = Math.floor(Math.random() * altpassword.length);
+            password += altpassword[random];
+        }
+    }
+
+    output.textContent = 'your password is ' + password;
+};
