@@ -9,22 +9,28 @@
 </head>
 <body>
     <div id="container">
-        <div id="centerdiv">
-            <H2>Random Password Gnerator</H2>
-        <label id="password" for="input">enter the number of characters for your password</label> <br>
-        <input type="number" id="input">
+        <div id="container 2">
 
-        <p>custumize your password</p><br>
-        <div id="container2">
-            <input type="checkbox" class="checkbox" id="lowercase"> Lowercase <br>
-            <input type="checkbox" class="checkbox" id="uppercase"> Uppercase <br>
-            <input type="checkbox" class="checkbox" id="symbols"> Symbols <br>
-            <input type="checkbox" class="checkbox" id="numbers"> Numbers <br><br> <br>
-        </div>
-        <button id="generate">Generate Password</button>
-        </div>
+            <h1>Random Password Generator</h1>
 
-        <p id="display"></p>
+            <label for="length">Enter the length of the password required</label> <br><br>
+            <input type="number" id="length">
+            
+            <p>Select atleast one from below</p>
+            <div id="contaier3">
+                <input type="checkbox" id="lowercase">Lowercase <br>
+                <input type="checkbox" id="upeercase">Uppercase <br>
+                <input type="checkbox" id="numbers">Numbers <br>
+                <input type="checkbox" id="symbols">Symbols <br>
+            </div>
+            <br>
+            <br>
+
+            <p id="password"></p>
+
+            <button id="generate">Generate Password</button>
+
+        </div>
 
         
     </div>
